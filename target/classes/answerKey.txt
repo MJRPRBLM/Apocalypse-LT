@@ -14,9 +14,9 @@ de nada
 regular
 perdon
 por favor
-senor sr don
-senora sra dona
-senorita srta
+senor 
+senora 
+senorita 
 como se llama usted
 como te llamas
 encantado
