@@ -1,8 +1,6 @@
 package com.example;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -24,24 +22,16 @@ public class PrimaryController {
     // A random question and its corresponding answer will be selected in initialize and stored in these variables
     private String selectedQuestion;
     private String selectedAnswer;
+    private int randomInt;
 
     @FXML 
     private void initialize() throws IOException {
-        // getting the contents of both the answerKey and the questions file and storing them in lists
-        try {
-            answers = Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/answerKey.txt")).trim().split("\\R"));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read answers file", e);
-        }
         
-        try {
-            questions = Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/questions.txt")).trim().split("\\R"));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read questions file", e);
-        }
+        questions = App.getQuestions();
+        answers = App.getAnswers();
 
         // A random question and its corresponding answer are selected
-        int randomInt = new Random().nextInt(questions.size());
+        randomInt = new Random().nextInt(questions.size());
         selectedQuestion = questions.get(randomInt);
         selectedAnswer = answers.get(randomInt);
 
@@ -58,8 +48,10 @@ public class PrimaryController {
             selectedQuestion,
             answer,
             selectedAnswer,
-            answer.equals(selectedAnswer)
+            answer.equals(selectedAnswer),
+            randomInt
         );
+        
         if (selectedAnswer.equals(answer)) {
             System.out.println("  is Correct");
         }
