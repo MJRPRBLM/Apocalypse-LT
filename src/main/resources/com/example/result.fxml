@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ResultController">
+    <children>
+        <Label fx:id="questionLabel" text="No Result Available"/>
+        <Label fx:id="answerLabel" text="No Result Available"/>
+        <Label fx:id="correctAnswerLabel" text="No Result Available"/>
+        <Label fx:id="resultLabel" text="No Result Available"/>
+        <Button fx:id="returnButton" text="Next Question" onAction="#returnToPrimary" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
