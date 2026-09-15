@@ -1,3 +1,6 @@
+===========================================================
+This File is Currently Unused
+===========================================================
 Good evening; good night.
 Good afternoon.
 Good morning. 
@@ -10,8 +13,8 @@ Not very good.
 What's new?
 What's happening?; What's going on?
 How are you?; How is it going?
-So-so; OK.
 You're welcome.
+So-so; OK.
 Pardon me; Excuse me.
 Please
 Mr.; sir

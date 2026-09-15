@@ -1,3 +1,6 @@
+===========================================================
+This File is Currently Unused
+===========================================================
 buenas noches
 buenas tardes
 buenos dias
@@ -14,9 +17,9 @@ de nada
 regular
 perdon
 por favor
-senor 
-senora 
-senorita 
+senor
+senora
+senorita
 como se llama usted
 como te llamas
 encantado

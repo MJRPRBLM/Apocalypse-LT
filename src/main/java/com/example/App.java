@@ -19,26 +19,19 @@ public class App extends Application {
     private static Scene scene;
 
     // This will be the list storing all questions in circulation, so that the user can answer all questions without repeating or keep questions in circulation after answering them. This is in app so that both controllers can access it, and so that it won't be reset when switching between scenes.
+    // These are not populated here, they are populated in the FrontPageController when they hit the begin button so that the user can select their preferred lessons
     private static ArrayList<String> availableQuestions;
     private static ArrayList<String> remainingAnswers;
 
-    @Override public void init() throws IOException {
-        try {
-            availableQuestions = new ArrayList<>(Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/questions.txt")).trim().split("\\R")));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read questions file", e);
-        }
-
-        try {
-            remainingAnswers = new ArrayList<>(Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/answerKey.txt")).trim().split("\\R")));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read answers file", e);
-        }
+    @Override
+    public void init() throws IOException {
+        availableQuestions = new ArrayList<>();
+        remainingAnswers = new ArrayList<>();
     }
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("frontPage"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
