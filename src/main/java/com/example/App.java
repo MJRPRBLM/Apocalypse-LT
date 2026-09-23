@@ -82,18 +82,4 @@ public class App extends Application {
 
         scene.setRoot(resultPage);
     }
-
-    public static void resetQandA() {
-        try {
-            availableQuestions = new ArrayList<>(Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/questions.txt")).trim().split("\\R")));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read questions file", e);
-        }
-
-        try {
-            remainingAnswers = new ArrayList<>(Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/answerKey.txt")).trim().split("\\R")));
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read answers file", e);
-        }
-    }
 }

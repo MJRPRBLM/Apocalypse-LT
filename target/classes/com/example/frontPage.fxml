@@ -19,6 +19,7 @@
         <Label text="Select lessons below and then begin"/>
         <CheckBox fx:id="greetingsLessonCB" text="Greetings" />
         <CheckBox fx:id="introductionsLessonCB" text="Introductions" />
+        <Button fx:id="debugQButton" text="Debug questions" onAction="#beginDebug"/>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 public class ResetScreenController {
     @FXML
     private void returnToPrimary() throws IOException {
-        App.resetQandA();
-        App.setRoot("primary");
+        App.setRoot("frontPage");
     }
 }

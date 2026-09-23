@@ -46,5 +46,21 @@ public class FrontPageController {
         
         App.setRoot("primary");
     }
+
+    @FXML
+    private void beginDebug() throws IOException {
+        try {
+                App.getQuestions().addAll(Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/lessons/debugQ.txt")).trim().split("\\R")));
+            } catch (IOException e) {
+                throw new IllegalStateException("Unable to read questions file", e);
+        }
+        try {
+                App.getAnswers().addAll((Arrays.asList(Files.readString(java.nio.file.Paths.get("src/main/resources/lessons/debugA.txt")).trim().split("\\R"))));
+            } catch (IOException e) {
+                throw new IllegalStateException("Unable to read answers file", e);
+        }
+
+        App.setRoot("primary");
+    }
 }
 
